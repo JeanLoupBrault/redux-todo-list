@@ -45,26 +45,31 @@ function AddTodo({ addTodo }) {
 
         return (
             <Wrapper>
+                <h1>Hi</h1>
+                <div className='hi'>Hello</div>
                 <SelectContainer>
                     <>
-                        <Input type="text" onChange={handleOnChange} value={value} placeholder="Your text here" />
+                        <Input type="text" onChange={handleOnChange} value={value} placeholder="Your text here ..." />
                         <StyledButton onClick={handleSubmit}>Add</StyledButton>
 
                     </>
                 </SelectContainer>
-                <WrapperDisplayTodo><strong>Display TODO list items from database</strong>
-                    <div>
+                <WrapperDisplayTodo>
+                    <SelectContainer2>
+                        <h2><strong>Display TODO list items from database</strong></h2>
+                        <div>
 
-                        {displayTodo.map(item => {
-                            return (
-                                <>
-                                    <div>
-                                        {item.value}
-                                    </div>
-                                </>
-                            )
-                        })}
-                    </div>
+                            {displayTodo.map(item => {
+                                return (
+                                    <>
+                                        <div>
+                                            {item.value}
+                                        </div>
+                                    </>
+                                )
+                            })}
+                        </div>
+                    </SelectContainer2>
                 </WrapperDisplayTodo>
             </Wrapper>
         )
@@ -75,6 +80,9 @@ function AddTodo({ addTodo }) {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 400px;
+  background-color: yellow;
 `;
 
 const Input = styled.input`
@@ -85,7 +93,20 @@ const Input = styled.input`
     font-size: 18px;
   }
 `;
+
 const SelectContainer = styled.div`
+  width: 400px;
+  background-color: white;
+  height: 96px;
+  margin-top: 105px;
+  margin-right: 560px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+`;
+
+const SelectContainer2 = styled.div`
   width: 400px;
   background-color: white;
   height: 96px;
